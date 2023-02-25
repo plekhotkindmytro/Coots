@@ -20,6 +20,11 @@ public class Spawner : MonoBehaviour
 
     }
 
+    public void Update()
+    {
+        
+    }
+
     private Vector3 GetNewRandomPosition(GameObject gameObject)
     {
         float maxX = Camera.main.orthographicSize * Camera.main.aspect - gameObject.transform.localScale.x / 2;

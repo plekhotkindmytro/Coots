@@ -9,6 +9,10 @@ public class GameController : MonoBehaviour
 {
     private static readonly string CURRENT_LEVEL_KEY = "currentLevel";
     public GameObject[] levels;
+    private bool canClick = false;
+    public GameObject restartLevelPopup;
+
+
 
     public void Quit()
     {
@@ -28,6 +32,12 @@ public class GameController : MonoBehaviour
         }
 
         levels[currentLevel].SetActive(true);
+    }
+
+    internal void ShowRestartLevelPopup()
+    {
+        SetCanClick(false);
+        restartLevelPopup.SetActive(true);
     }
 
     public void LoadNextLevel()
@@ -64,5 +74,15 @@ public class GameController : MonoBehaviour
     {
         PlayerPrefs.DeleteAll();
         SceneManager.LoadScene(0);
+    }
+
+    public void SetCanClick(bool value)
+    {
+        canClick = value;
+    }
+
+    public bool GetCanClick()
+    {
+        return canClick;
     }
 }

@@ -14,6 +14,7 @@ public class PuzzleGenerator : MonoBehaviour
     private int oddRow;
     private int oddColumn;
     GameObject handPointer;
+    public GameController gameController;
 
     public int ROW_NUMBER = 6;
     public int COLUMN_NUMBER = 3;
@@ -70,7 +71,8 @@ public class PuzzleGenerator : MonoBehaviour
 
     public void GenerateGrid()
     {
-        if(tutorial)
+        gameController.SetCanClick(false);
+        if (tutorial)
         {
             angryCatSound.Play();
         }
@@ -127,11 +129,7 @@ public class PuzzleGenerator : MonoBehaviour
                 {
                     if (rowIndex == oddRow && columnIndex == oddColumn)
                     {
-                        /*  Sequence sequence = DOTween.Sequence();
-                          sequence.Append(tile.transform.DOScale(tile.transform.localScale*1.2f, 0.4f));
-                          sequence.Append(tile.transform.DOScale(tile.transform.localScale, 0.4f));
-                          sequence.SetLoops(-1);
-                          sequence.Play();*/
+                     
 
                         handPointer = Instantiate(handPointerPrefab);
                         ScaleTile(handPointer);
@@ -172,7 +170,13 @@ public class PuzzleGenerator : MonoBehaviour
 
                     tile.transform.DOScale(targetScale*1.5f, 0.2f).SetDelay(delay).OnComplete(()=> {
                         popSound.Play();
-                        tile.transform.DOScale(targetScale, 0.1f).onComplete();
+                        tile.transform.DOScale(targetScale, 0.1f).OnComplete(() =>
+                        {
+                            if(tile.Equals(grid[grid.GetLength(0) - 1, grid.GetLength(1) - 1]))
+                            {
+                                gameController.SetCanClick(true);
+                            }
+                        });
                     });
                 }
             }

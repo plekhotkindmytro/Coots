@@ -16,15 +16,14 @@ public class ClickScript : MonoBehaviour
     public GameController gameController;
     private bool isOdd;
 
-    private bool clicked = false;
     // Update is called once per frame
     void Update()
     {
-        if (clicked)
+        if (gameController.GetCanClick())
         {
-            return;
+            TouchHandler();
         }
-        TouchHandler();
+       
     }
 
     private void TouchHandler()
@@ -91,11 +90,11 @@ public class ClickScript : MonoBehaviour
             return;
         }
 
-        if (clicked)
+        if (!gameController.GetCanClick())
         {
             return;
         }
-        clicked = true;
+        gameController.SetCanClick(false);
         Transform shadow = clickedObject.transform.GetChild(0);
         Vector3 shadowLocalPos = shadow.localPosition;
         Vector3 movePosition = clickedObject.transform.localPosition + clickedObject.transform.localScale.x * shadowLocalPos;
@@ -115,8 +114,8 @@ public class ClickScript : MonoBehaviour
             wave.transform.DOScale(size + WAVE_MAX_SCALE, WAVE_MAX_SCALE_TIME).OnComplete(() =>
             {
                 Destroy(wave);
-                
-                clicked = false;
+
+                gameController.SetCanClick(true);
                 LoadNextLevel();
 
             });
@@ -134,7 +133,7 @@ public class ClickScript : MonoBehaviour
             shadow.parent = clickedObject.transform;
             if (!isOdd)
             {
-                clicked = false;
+                 gameController.SetCanClick(true);
             }
         });
         sequence.Play();
