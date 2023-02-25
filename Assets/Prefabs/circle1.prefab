@@ -99,7 +99,7 @@ GameObject:
   - component: {fileID: 8081530502099512247}
   m_Layer: 0
   m_Name: circle1
-  m_TagString: Untagged
+  m_TagString: cat
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -195,14 +195,15 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 277637957200028285}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 31d068985dc558643ab8e42194c4bede, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   wavePrefab: {fileID: 2234910413414609542, guid: d94d64d8e24404748945b854d6226b4d, type: 3}
-  touchSound: {fileID: 8081530502099512247}
-  isOdd: 0
+  cootsSound: {fileID: 0}
+  angryCatSound: {fileID: 0}
+  gameController: {fileID: 0}
 --- !u!82 &8081530502099512247
 AudioSource:
   m_ObjectHideFlags: 0
@@ -210,7 +211,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 277637957200028285}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: ae38403abdb987e48838fbdccb0d3409, type: 3}

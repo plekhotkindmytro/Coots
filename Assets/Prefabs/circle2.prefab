@@ -83,9 +83,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: circle2
       objectReference: {fileID: 0}
+    - target: {fileID: 277637957200028285, guid: 02d9432cd23d14344878eb111edd53dd, type: 3}
+      propertyPath: m_TagString
+      value: coots
+      objectReference: {fileID: 0}
     - target: {fileID: 5356330506431901349, guid: 02d9432cd23d14344878eb111edd53dd, type: 3}
       propertyPath: isOdd
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5356330506431901349, guid: 02d9432cd23d14344878eb111edd53dd, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8081530502099512247, guid: 02d9432cd23d14344878eb111edd53dd, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8081530502099512247, guid: 02d9432cd23d14344878eb111edd53dd, type: 3}
       propertyPath: m_audioClip

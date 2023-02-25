@@ -1,87 +1,68 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class GameController : MonoBehaviour
 {
-    private static readonly string SIZE_KEY = "size";
-    private static readonly string BLURED_KEY = "blured";
-    private static readonly string COLOR_KEY = "color";
-    private static readonly string SELECTED = "selected";
-
-    private static readonly Color BLUE = new Color32(62, 120, 178, 255);
-    private static readonly Color RED = new Color32(236, 11, 67, 255);
-    private static readonly Color GREEN = new Color32(19, 138, 54, 255);
-
-
-    public Slider sizeSlider;
-
-    public Button redButton;
-    public Button greenButton;
-    public Button blueButton;
-
-    public Button solidButton;
-    public Button bluredButton;
+    private static readonly string CURRENT_LEVEL_KEY = "currentLevel";
+    public GameObject[] levels;
 
     public void Quit()
     {
         Application.Quit();
     }
-    public void SetSize()
+
+    public void LoadCurrentLevel()
     {
-        float value = sizeSlider.value;
-        PlayerPrefs.SetFloat(SIZE_KEY, value);
+        int currentLevel = 0;
+        if (PlayerPrefs.HasKey(CURRENT_LEVEL_KEY))
+        {
+            currentLevel = PlayerPrefs.GetInt(CURRENT_LEVEL_KEY);
+        }
+        for (int i = 0; i < levels.Length; i++)
+        {
+            levels[i].SetActive(false);
+        }
+
+        levels[currentLevel].SetActive(true);
     }
 
-    public void SetBlured()
+    public void LoadNextLevel()
     {
-        Debug.Log("SetBlured");
-        Debug.Log("Has Blured: " + PlayerPrefs.HasKey(BLURED_KEY));
+        int nextLevel = 0;
+        if (PlayerPrefs.HasKey(CURRENT_LEVEL_KEY))
+        {
+            int currentLevel = PlayerPrefs.GetInt(CURRENT_LEVEL_KEY);
+            nextLevel = currentLevel + 1;
 
-        PlayerPrefs.SetString(BLURED_KEY, "blured");
-        bluredButton.GetComponentInChildren<TMPro.TMP_Text>().text = SELECTED;
-        solidButton.GetComponentInChildren<TMPro.TMP_Text>().text = string.Empty;
+        } else
+        {
+            nextLevel++;
+        }
+
+        
+
+        for (int i = 0; i < levels.Length; i++)
+        {
+            levels[i].SetActive(false);
+        }
+        if(nextLevel < levels.Length)
+        {
+            levels[nextLevel].SetActive(true);
+            PlayerPrefs.SetInt(CURRENT_LEVEL_KEY, nextLevel);
+            
+        } else
+        {
+            SceneManager.LoadScene(1);
+        }
     }
 
-    public void SetSolid()
+    public void Restart()
     {
-        PlayerPrefs.DeleteKey(BLURED_KEY);
-        Debug.Log("SetSolid");
-        Debug.Log("Has Blured: "+ PlayerPrefs.HasKey(BLURED_KEY));
-        bluredButton.GetComponentInChildren<TMPro.TMP_Text>().text = string.Empty;
-        solidButton.GetComponentInChildren<TMPro.TMP_Text>().text = SELECTED;
+        PlayerPrefs.DeleteAll();
+        SceneManager.LoadScene(0);
     }
-
-    public void SetRedColor()
-    {
-        PlayerPrefs.SetString(COLOR_KEY, "red");
-        redButton.GetComponentInChildren<TMPro.TMP_Text>().text = SELECTED;
-        greenButton.GetComponentInChildren<TMPro.TMP_Text>().text = string.Empty;
-        blueButton.GetComponentInChildren<TMPro.TMP_Text>().text = string.Empty;
-        sizeSlider.fillRect.GetComponent<Image>().color = RED; 
-    }
-
-    public void SetBlueColor()
-    {
-        PlayerPrefs.SetString(COLOR_KEY, "blue");
-        redButton.GetComponentInChildren<TMPro.TMP_Text>().text = string.Empty;
-        greenButton.GetComponentInChildren<TMPro.TMP_Text>().text = string.Empty;
-        blueButton.GetComponentInChildren<TMPro.TMP_Text>().text = SELECTED;
-
-        sizeSlider.fillRect.GetComponent<Image>().color = BLUE;
-    }
-
-    public void SetGreenColor()
-    {
-        PlayerPrefs.SetString(COLOR_KEY, "green");
-        redButton.GetComponentInChildren<TMPro.TMP_Text>().text = string.Empty;
-        greenButton.GetComponentInChildren<TMPro.TMP_Text>().text = SELECTED;
-        blueButton.GetComponentInChildren<TMPro.TMP_Text>().text = string.Empty;
-
-        sizeSlider.fillRect.GetComponent<Image>().color = GREEN;
-    }
-
-
-
 }

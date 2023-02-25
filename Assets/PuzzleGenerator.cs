@@ -7,6 +7,7 @@ public class PuzzleGenerator : MonoBehaviour
     public GameObject prefab;
     public GameObject oddPrefab;
     public AudioSource popSound;
+    public AudioSource angryCatSound;
     public GameObject handPointerPrefab;
     public int colorSchemeIndex;
     public bool tutorial = false;
@@ -69,6 +70,11 @@ public class PuzzleGenerator : MonoBehaviour
 
     public void GenerateGrid()
     {
+        if(tutorial)
+        {
+            angryCatSound.Play();
+        }
+        
         cam = Camera.main;
         SetCameraColor();
         oddRow = Random.Range(0, ROW_NUMBER);
@@ -127,7 +133,7 @@ public class PuzzleGenerator : MonoBehaviour
                           sequence.SetLoops(-1);
                           sequence.Play();*/
 
-                        GameObject handPointer = Instantiate(handPointerPrefab);
+                        handPointer = Instantiate(handPointerPrefab);
                         ScaleTile(handPointer);
                         float distance = -0.5f;
                         Vector3 pointerPosition = tile.transform.localPosition + tile.transform.localScale.x * new Vector3(0, distance, 0);
@@ -186,7 +192,7 @@ public class PuzzleGenerator : MonoBehaviour
     private void DestroyPreviousGrid()
     {
         DOTween.KillAll();
-        Destroy(handPointer);
+        
         if (grid != null)
         {
             for (int rowIndex = 0; rowIndex < grid.GetLength(0); rowIndex++)
@@ -214,6 +220,12 @@ public class PuzzleGenerator : MonoBehaviour
     private void OnEnable()
     {
         GenerateGrid();
+    }
+
+    private void OnDisable()
+    {
+        Destroy(handPointer);
+        DestroyPreviousGrid();
     }
     private void ScaleTile(GameObject tile)
     {

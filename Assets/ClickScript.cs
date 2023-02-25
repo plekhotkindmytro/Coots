@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
+using System;
 
 public class ClickScript : MonoBehaviour
 {
@@ -9,9 +10,11 @@ public class ClickScript : MonoBehaviour
     private static readonly float WAVE_MAX_SCALE = 40f;
     private static readonly float WAVE_MAX_SCALE_TIME = 1f;
     public GameObject wavePrefab;
-    public AudioSource touchSound;
-
-    public bool isOdd;
+    public AudioSource cootsSound;
+    public AudioSource angryCatSound;
+    private AudioSource clickSound;
+    public GameController gameController;
+    private bool isOdd;
 
     private bool clicked = false;
     // Update is called once per frame
@@ -26,20 +29,15 @@ public class ClickScript : MonoBehaviour
 
     private void TouchHandler()
     {
-        if (Input.touches != null && Input.touches.Length > 0)
+        if (Input.GetMouseButtonDown(0))
         {
-            Touch touch = Input.touches[0];
-
-            if (touch.phase == TouchPhase.Began)
+            if (gameObject.activeSelf)
             {
-                if (gameObject.activeSelf)
-                {
-                    GameObject clickedObject = CheckCollision(touch.position);
+                GameObject clickedObject = CheckCollision(Input.mousePosition);
 
-                    if (this.gameObject.Equals(clickedObject))
-                    {
-                        CollideAnimation(clickedObject);
-                    }
+                if (clickedObject != null)
+                {
+                    CollideAnimation(clickedObject);
                 }
             }
         }
@@ -68,9 +66,18 @@ public class ClickScript : MonoBehaviour
         if (hit2D.collider && hit2D.collider.gameObject)
         {
             clickedObject = hit2D.collider.gameObject;
-            if (this.gameObject.Equals(clickedObject))
+            if (clickedObject != null)
             {
-                clickedObject = this.gameObject;
+                if (clickedObject.tag.Equals("coots"))
+                {
+                    clickSound = cootsSound;
+                    isOdd = true;
+                }
+                else if (clickedObject.tag.Equals("cat"))
+                {
+                    clickSound = angryCatSound;
+                    isOdd = false;
+                }
             }
         }
 
@@ -89,7 +96,7 @@ public class ClickScript : MonoBehaviour
             return;
         }
         clicked = true;
-        Transform shadow = this.gameObject.transform.GetChild(0);
+        Transform shadow = clickedObject.transform.GetChild(0);
         Vector3 shadowLocalPos = shadow.localPosition;
         Vector3 movePosition = clickedObject.transform.localPosition + clickedObject.transform.localScale.x * shadowLocalPos;
         shadow.parent = null;
@@ -98,16 +105,19 @@ public class ClickScript : MonoBehaviour
         {
             GameObject wave = Instantiate(wavePrefab);
             wave.transform.position = movePosition;
-            Color32 parentColor = gameObject.GetComponent<SpriteRenderer>().color;
+           
             Color32 waveColor = Color.black;
             waveColor.a = 200;
             SpriteRenderer waveSpriteRenderer = wave.GetComponent<SpriteRenderer>();
             waveSpriteRenderer.color = waveColor;
-            float size = this.gameObject.transform.localScale.x;
-            Debug.Log("size: " + size);
+            float size = clickedObject.transform.localScale.x;
+
             wave.transform.DOScale(size + WAVE_MAX_SCALE, WAVE_MAX_SCALE_TIME).OnComplete(() =>
             {
                 Destroy(wave);
+                
+                clicked = false;
+                LoadNextLevel();
 
             });
         }
@@ -116,16 +126,22 @@ public class ClickScript : MonoBehaviour
         Sequence sequence = DOTween.Sequence();
         sequence.Append(clickedObject.transform.DOLocalMove(movePosition, 0.1f).OnComplete(() =>
         {
-            
-
-            touchSound.Play();
+            clickSound.Play();
         }));
         sequence.Append(clickedObject.transform.DOLocalMove(clickedObject.transform.localPosition, 0.1f));
         sequence.OnComplete(() =>
         {
             shadow.parent = clickedObject.transform;
-            clicked = false; 
+            if (!isOdd)
+            {
+                clicked = false;
+            }
         });
         sequence.Play();
+    }
+
+    private void LoadNextLevel()
+    {
+        gameController.LoadNextLevel();
     }
 }
