@@ -15,6 +15,7 @@ public class PuzzleGenerator : MonoBehaviour
     private int oddColumn;
     GameObject handPointer;
     public GameController gameController;
+    public TMPro.TMP_Text timerText;
 
     public int ROW_NUMBER = 6;
     public int COLUMN_NUMBER = 3;
@@ -32,6 +33,11 @@ public class PuzzleGenerator : MonoBehaviour
     private static readonly Color32[] backgroundColors = new Color32[]
     {
         bgColor1, bgColor2, bgColor3, bgColor4
+    };
+
+    private static readonly Color32[] timerTextColors = new Color32[]
+    {
+        Color.black, Color.black, Color.black, Color.white
     };
 
 
@@ -219,6 +225,7 @@ public class PuzzleGenerator : MonoBehaviour
     private void SetCameraColor()
     {
         cam.backgroundColor = backgroundColors[colorSchemeIndex];
+        timerText.color = timerTextColors[colorSchemeIndex];
     }
 
     private void OnEnable()

@@ -95,6 +95,7 @@ public class ClickScript : MonoBehaviour
             return;
         }
         gameController.SetCanClick(false);
+        
         Transform shadow = clickedObject.transform.GetChild(0);
         Vector3 shadowLocalPos = shadow.localPosition;
         Vector3 movePosition = clickedObject.transform.localPosition + clickedObject.transform.localScale.x * shadowLocalPos;
@@ -102,6 +103,7 @@ public class ClickScript : MonoBehaviour
 
         if (isOdd)
         {
+            gameController.CompleteLevel();
             GameObject wave = Instantiate(wavePrefab);
             wave.transform.position = movePosition;
            
@@ -141,6 +143,6 @@ public class ClickScript : MonoBehaviour
 
     private void LoadNextLevel()
     {
-        gameController.LoadNextLevel();
+        gameController.ShowCompleteLevelPopup();
     }
 }

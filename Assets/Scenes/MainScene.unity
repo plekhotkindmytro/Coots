@@ -319,9 +319,10 @@ MonoBehaviour:
   popSound: {fileID: 535133253}
   angryCatSound: {fileID: 0}
   handPointerPrefab: {fileID: 0}
-  colorSchemeIndex: 3
+  colorSchemeIndex: 1
   tutorial: 0
   gameController: {fileID: 842161972}
+  timerText: {fileID: 1580415044}
   ROW_NUMBER: 14
   COLUMN_NUMBER: 14
 --- !u!114 &28998471
@@ -336,7 +337,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9443c0422e3cdee47b0cd8fb7ebca2b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxTimeInSeconds: 10
+  maxTimeInSeconds: 11
   gameController: {fileID: 842161972}
   timerText: {fileID: 1580415044}
 --- !u!1 &56905282
@@ -600,9 +601,10 @@ MonoBehaviour:
   popSound: {fileID: 535133253}
   angryCatSound: {fileID: 0}
   handPointerPrefab: {fileID: 0}
-  colorSchemeIndex: 3
+  colorSchemeIndex: 2
   tutorial: 0
   gameController: {fileID: 842161972}
+  timerText: {fileID: 1580415044}
   ROW_NUMBER: 10
   COLUMN_NUMBER: 10
 --- !u!114 &92249986
@@ -617,7 +619,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9443c0422e3cdee47b0cd8fb7ebca2b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxTimeInSeconds: 10
+  maxTimeInSeconds: 11
   gameController: {fileID: 842161972}
   timerText: {fileID: 1580415044}
 --- !u!1 &95151325
@@ -653,7 +655,7 @@ RectTransform:
   m_Children:
   - {fileID: 1139995195}
   m_Father: {fileID: 1240016029}
-  m_RootOrder: 2
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1296,9 +1298,10 @@ MonoBehaviour:
   popSound: {fileID: 535133253}
   angryCatSound: {fileID: 0}
   handPointerPrefab: {fileID: 0}
-  colorSchemeIndex: 3
+  colorSchemeIndex: 0
   tutorial: 0
   gameController: {fileID: 842161972}
+  timerText: {fileID: 1580415044}
   ROW_NUMBER: 12
   COLUMN_NUMBER: 12
 --- !u!114 &268231552
@@ -1313,7 +1316,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9443c0422e3cdee47b0cd8fb7ebca2b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxTimeInSeconds: 10
+  maxTimeInSeconds: 11
   gameController: {fileID: 842161972}
   timerText: {fileID: 1580415044}
 --- !u!1 &293486989
@@ -1551,12 +1554,12 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1240016029}
-  m_RootOrder: 0
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 200}
-  m_SizeDelta: {x: 2200, y: 150}
+  m_SizeDelta: {x: 1500, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &331265852
 MonoBehaviour:
@@ -1578,7 +1581,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Awesome! You catched Coots!
+  m_text: 'Awesome! You catched Coots!
+
+
+    But she does not know you, so she run
+    away again!'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
   m_sharedMaterial: {fileID: 2164040, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
@@ -1587,8 +1594,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278250238
-  m_fontColor: {r: 0.99607843, g: 0.91764706, b: 0, a: 1}
+    rgba: 4288111587
+  m_fontColor: {r: 0.8901961, g: 0.3882353, b: 0.5921569, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -2085,6 +2092,7 @@ MonoBehaviour:
   colorSchemeIndex: 2
   tutorial: 0
   gameController: {fileID: 842161972}
+  timerText: {fileID: 1580415044}
   ROW_NUMBER: 6
   COLUMN_NUMBER: 6
 --- !u!4 &424471930
@@ -2114,7 +2122,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9443c0422e3cdee47b0cd8fb7ebca2b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxTimeInSeconds: 10
+  maxTimeInSeconds: 11
   gameController: {fileID: 842161972}
   timerText: {fileID: 1580415044}
 --- !u!1 &435162015
@@ -2231,6 +2239,7 @@ MonoBehaviour:
   colorSchemeIndex: 0
   tutorial: 0
   gameController: {fileID: 842161972}
+  timerText: {fileID: 1580415044}
   ROW_NUMBER: 4
   COLUMN_NUMBER: 4
 --- !u!4 &471875088
@@ -2260,7 +2269,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9443c0422e3cdee47b0cd8fb7ebca2b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxTimeInSeconds: 10
+  maxTimeInSeconds: 11
   gameController: {fileID: 842161972}
   timerText: {fileID: 1580415044}
 --- !u!1 &487667647
@@ -2970,8 +2979,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 7482667652216324306, guid: 1b9ddb15c6bd05140804ac25bfb0732e, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -3003,7 +3012,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &620333990
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3078,6 +3087,7 @@ MonoBehaviour:
   colorSchemeIndex: 3
   tutorial: 0
   gameController: {fileID: 842161972}
+  timerText: {fileID: 1580415044}
   ROW_NUMBER: 11
   COLUMN_NUMBER: 11
 --- !u!114 &626689602
@@ -3092,7 +3102,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9443c0422e3cdee47b0cd8fb7ebca2b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxTimeInSeconds: 10
+  maxTimeInSeconds: 11
   gameController: {fileID: 842161972}
   timerText: {fileID: 1580415044}
 --- !u!1 &633982197
@@ -3346,8 +3356,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 7482667652216324306, guid: 1b9ddb15c6bd05140804ac25bfb0732e, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -3376,13 +3386,13 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 1434b130548362c4c8b84daedd1fb094, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.251
   m_Pitch: 1
   Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 92
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -3523,9 +3533,10 @@ MonoBehaviour:
   popSound: {fileID: 535133253}
   angryCatSound: {fileID: 0}
   handPointerPrefab: {fileID: 0}
-  colorSchemeIndex: 3
+  colorSchemeIndex: 2
   tutorial: 0
   gameController: {fileID: 842161972}
+  timerText: {fileID: 1580415044}
   ROW_NUMBER: 26
   COLUMN_NUMBER: 26
 --- !u!114 &656239423
@@ -3540,7 +3551,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9443c0422e3cdee47b0cd8fb7ebca2b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxTimeInSeconds: 10
+  maxTimeInSeconds: 11
   gameController: {fileID: 842161972}
   timerText: {fileID: 1580415044}
 --- !u!1 &729560567
@@ -3746,13 +3757,13 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 1434b130548362c4c8b84daedd1fb094, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.279
   m_Pitch: 1
   Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 82
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -3868,6 +3879,7 @@ MonoBehaviour:
   colorSchemeIndex: 3
   tutorial: 0
   gameController: {fileID: 842161972}
+  timerText: {fileID: 1580415044}
   ROW_NUMBER: 7
   COLUMN_NUMBER: 7
 --- !u!4 &808613177
@@ -3897,7 +3909,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9443c0422e3cdee47b0cd8fb7ebca2b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxTimeInSeconds: 10
+  maxTimeInSeconds: 11
   gameController: {fileID: 842161972}
   timerText: {fileID: 1580415044}
 --- !u!1 &813830371
@@ -3950,9 +3962,10 @@ MonoBehaviour:
   popSound: {fileID: 535133253}
   angryCatSound: {fileID: 0}
   handPointerPrefab: {fileID: 0}
-  colorSchemeIndex: 3
+  colorSchemeIndex: 2
   tutorial: 0
   gameController: {fileID: 842161972}
+  timerText: {fileID: 1580415044}
   ROW_NUMBER: 16
   COLUMN_NUMBER: 16
 --- !u!114 &813830374
@@ -3967,7 +3980,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9443c0422e3cdee47b0cd8fb7ebca2b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxTimeInSeconds: 10
+  maxTimeInSeconds: 11
   gameController: {fileID: 842161972}
   timerText: {fileID: 1580415044}
 --- !u!1 &818473077
@@ -4229,6 +4242,7 @@ MonoBehaviour:
   - {fileID: 1324350675}
   - {fileID: 656239420}
   restartLevelPopup: {fileID: 633982197}
+  completeLevelPopup: {fileID: 620333989}
 --- !u!4 &842161973
 Transform:
   m_ObjectHideFlags: 0
@@ -4308,6 +4322,7 @@ MonoBehaviour:
   colorSchemeIndex: 0
   tutorial: 1
   gameController: {fileID: 842161972}
+  timerText: {fileID: 1580415044}
   ROW_NUMBER: 3
   COLUMN_NUMBER: 3
 --- !u!1 &911860738
@@ -4368,8 +4383,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 7482667652216324306, guid: 1b9ddb15c6bd05140804ac25bfb0732e, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -4725,6 +4740,82 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 938884323}
   m_CullTransparentMesh: 1
+--- !u!1 &1028725559
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1028725560}
+  - component: {fileID: 1028725562}
+  - component: {fileID: 1028725561}
+  m_Layer: 5
+  m_Name: shadow1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1028725560
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1028725559}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.70000577, y: 0.70000577, z: 0.70000577}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 1240016029}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 977.0001, y: 160.00008}
+  m_SizeDelta: {x: 675, y: 900}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1028725561
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1028725559}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.78431374}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1028725562
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1028725559}
+  m_CullTransparentMesh: 1
 --- !u!1 &1033509218
 GameObject:
   m_ObjectHideFlags: 0
@@ -4990,6 +5081,7 @@ MonoBehaviour:
   colorSchemeIndex: 0
   tutorial: 0
   gameController: {fileID: 842161972}
+  timerText: {fileID: 1580415044}
   ROW_NUMBER: 8
   COLUMN_NUMBER: 8
 --- !u!114 &1069699651
@@ -5004,7 +5096,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9443c0422e3cdee47b0cd8fb7ebca2b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxTimeInSeconds: 10
+  maxTimeInSeconds: 11
   gameController: {fileID: 842161972}
   timerText: {fileID: 1580415044}
 --- !u!1 &1070408235
@@ -5784,7 +5876,7 @@ RectTransform:
   m_Children:
   - {fileID: 1357357920}
   m_Father: {fileID: 1240016029}
-  m_RootOrder: 1
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -6194,8 +6286,8 @@ GameObject:
   - component: {fileID: 1240016029}
   - component: {fileID: 1240016033}
   - component: {fileID: 1240016032}
-  - component: {fileID: 1240016031}
   - component: {fileID: 1240016030}
+  - component: {fileID: 1240016034}
   m_Layer: 5
   m_Name: Panel
   m_TagString: Untagged
@@ -6215,6 +6307,8 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1028725560}
+  - {fileID: 1982719548}
   - {fileID: 331265851}
   - {fileID: 1191837380}
   - {fileID: 95151326}
@@ -6239,7 +6333,45 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   backgroundMusic: {fileID: 935202548}
---- !u!82 &1240016031
+--- !u!114 &1240016032
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1240016028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.99607843, g: 0.91764706, b: 0, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 7482667652216324306, guid: 1b9ddb15c6bd05140804ac25bfb0732e, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1240016033
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1240016028}
+  m_CullTransparentMesh: 1
+--- !u!82 &1240016034
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -6249,9 +6381,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 1434b130548362c4c8b84daedd1fb094, type: 3}
+  m_audioClip: {fileID: 8300000, guid: c70e44aa80597f948b119c1de58b2d13, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.462
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -6335,44 +6467,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &1240016032
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1240016028}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &1240016033
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1240016028}
-  m_CullTransparentMesh: 1
 --- !u!1 &1324350675
 GameObject:
   m_ObjectHideFlags: 0
@@ -6423,9 +6517,10 @@ MonoBehaviour:
   popSound: {fileID: 535133253}
   angryCatSound: {fileID: 0}
   handPointerPrefab: {fileID: 0}
-  colorSchemeIndex: 3
+  colorSchemeIndex: 1
   tutorial: 0
   gameController: {fileID: 842161972}
+  timerText: {fileID: 1580415044}
   ROW_NUMBER: 24
   COLUMN_NUMBER: 24
 --- !u!114 &1324350678
@@ -6440,7 +6535,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9443c0422e3cdee47b0cd8fb7ebca2b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxTimeInSeconds: 10
+  maxTimeInSeconds: 11
   gameController: {fileID: 842161972}
   timerText: {fileID: 1580415044}
 --- !u!1 &1348528491
@@ -6925,6 +7020,7 @@ MonoBehaviour:
   colorSchemeIndex: 1
   tutorial: 0
   gameController: {fileID: 842161972}
+  timerText: {fileID: 1580415044}
   ROW_NUMBER: 5
   COLUMN_NUMBER: 5
 --- !u!4 &1410791565
@@ -6954,7 +7050,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9443c0422e3cdee47b0cd8fb7ebca2b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxTimeInSeconds: 10
+  maxTimeInSeconds: 11
   gameController: {fileID: 842161972}
   timerText: {fileID: 1580415044}
 --- !u!1 &1412159214
@@ -7083,9 +7179,10 @@ MonoBehaviour:
   popSound: {fileID: 535133253}
   angryCatSound: {fileID: 0}
   handPointerPrefab: {fileID: 0}
-  colorSchemeIndex: 3
+  colorSchemeIndex: 1
   tutorial: 0
   gameController: {fileID: 842161972}
+  timerText: {fileID: 1580415044}
   ROW_NUMBER: 9
   COLUMN_NUMBER: 9
 --- !u!114 &1473098962
@@ -7100,7 +7197,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9443c0422e3cdee47b0cd8fb7ebca2b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxTimeInSeconds: 10
+  maxTimeInSeconds: 11
   gameController: {fileID: 842161972}
   timerText: {fileID: 1580415044}
 --- !u!1 &1475414875
@@ -9142,6 +9239,82 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1982719547
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1982719548}
+  - component: {fileID: 1982719550}
+  - component: {fileID: 1982719549}
+  m_Layer: 5
+  m_Name: CootsPhoto1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1982719548
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1982719547}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.70000577, y: 0.70000577, z: 0.70000577}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 1240016029}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 952, y: 185}
+  m_SizeDelta: {x: 675, y: 900}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1982719549
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1982719547}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 916c918607e997a4ca9f2a3ba05d0edb, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1982719550
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1982719547}
+  m_CullTransparentMesh: 1
 --- !u!1 &2044371273
 GameObject:
   m_ObjectHideFlags: 0
@@ -9459,6 +9632,7 @@ MonoBehaviour:
   colorSchemeIndex: 3
   tutorial: 0
   gameController: {fileID: 842161972}
+  timerText: {fileID: 1580415044}
   ROW_NUMBER: 18
   COLUMN_NUMBER: 18
 --- !u!114 &2081079512
@@ -9473,7 +9647,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9443c0422e3cdee47b0cd8fb7ebca2b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxTimeInSeconds: 10
+  maxTimeInSeconds: 11
   gameController: {fileID: 842161972}
   timerText: {fileID: 1580415044}
 --- !u!1 &2104696836
@@ -9746,9 +9920,10 @@ MonoBehaviour:
   popSound: {fileID: 535133253}
   angryCatSound: {fileID: 0}
   handPointerPrefab: {fileID: 0}
-  colorSchemeIndex: 3
+  colorSchemeIndex: 0
   tutorial: 0
   gameController: {fileID: 842161972}
+  timerText: {fileID: 1580415044}
   ROW_NUMBER: 22
   COLUMN_NUMBER: 22
 --- !u!114 &2135826657
@@ -9763,6 +9938,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9443c0422e3cdee47b0cd8fb7ebca2b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxTimeInSeconds: 10
+  maxTimeInSeconds: 11
   gameController: {fileID: 842161972}
   timerText: {fileID: 1580415044}

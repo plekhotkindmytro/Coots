@@ -9,8 +9,13 @@ public class GameController : MonoBehaviour
 {
     private static readonly string CURRENT_LEVEL_KEY = "currentLevel";
     public GameObject[] levels;
-    private bool canClick = false;
+    
     public GameObject restartLevelPopup;
+    public GameObject completeLevelPopup;
+
+    private bool canClick = false;
+    private bool levelComplete = false;
+
 
 
 
@@ -21,6 +26,7 @@ public class GameController : MonoBehaviour
 
     public void LoadCurrentLevel()
     {
+        levelComplete = false;
         int currentLevel = 0;
         if (PlayerPrefs.HasKey(CURRENT_LEVEL_KEY))
         {
@@ -30,18 +36,32 @@ public class GameController : MonoBehaviour
         {
             levels[i].SetActive(false);
         }
-
+       
         levels[currentLevel].SetActive(true);
     }
 
-    internal void ShowRestartLevelPopup()
+    public void ShowRestartLevelPopup()
     {
+        if(levelComplete)
+        {
+            return;
+        }
+
         SetCanClick(false);
         restartLevelPopup.SetActive(true);
     }
 
+    public void ShowCompleteLevelPopup()
+    {
+       
+
+        SetCanClick(false);
+        completeLevelPopup.SetActive(true);
+    }
+
     public void LoadNextLevel()
     {
+        levelComplete = false;
         int nextLevel = 0;
         if (PlayerPrefs.HasKey(CURRENT_LEVEL_KEY))
         {
@@ -52,8 +72,6 @@ public class GameController : MonoBehaviour
         {
             nextLevel++;
         }
-
-        
 
         for (int i = 0; i < levels.Length; i++)
         {
@@ -72,6 +90,7 @@ public class GameController : MonoBehaviour
 
     public void Restart()
     {
+        levelComplete = false;
         PlayerPrefs.DeleteAll();
         SceneManager.LoadScene(0);
     }
@@ -84,5 +103,10 @@ public class GameController : MonoBehaviour
     public bool GetCanClick()
     {
         return canClick;
+    }
+
+    internal void CompleteLevel()
+    {
+        levelComplete = true;
     }
 }
