@@ -9,7 +9,7 @@ public class GameController : MonoBehaviour
 {
     private static readonly string CURRENT_LEVEL_KEY = "currentLevel";
     public GameObject[] levels;
-    
+
     public GameObject restartLevelPopup;
     public GameObject completeLevelPopup;
 
@@ -36,27 +36,51 @@ public class GameController : MonoBehaviour
         {
             levels[i].SetActive(false);
         }
-       
+
         levels[currentLevel].SetActive(true);
     }
 
     public void ShowRestartLevelPopup()
     {
-        if(levelComplete)
+        if (levelComplete)
         {
             return;
         }
 
+
+
         SetCanClick(false);
+
+
         restartLevelPopup.SetActive(true);
+
+
+
     }
 
     public void ShowCompleteLevelPopup()
     {
-       
+        int nextLevel = 0;
+        if (PlayerPrefs.HasKey(CURRENT_LEVEL_KEY))
+        {
+            int currentLevel = PlayerPrefs.GetInt(CURRENT_LEVEL_KEY);
+            nextLevel = currentLevel + 1;
+        }
+        else
+        {
+            nextLevel++;
+        }
 
         SetCanClick(false);
-        completeLevelPopup.SetActive(true);
+        if (nextLevel >= levels.Length)
+        {
+            SceneManager.LoadScene(1);
+        }
+        else
+        {
+
+            completeLevelPopup.SetActive(true);
+        }
     }
 
     public void LoadNextLevel()
@@ -68,7 +92,8 @@ public class GameController : MonoBehaviour
             int currentLevel = PlayerPrefs.GetInt(CURRENT_LEVEL_KEY);
             nextLevel = currentLevel + 1;
 
-        } else
+        }
+        else
         {
             nextLevel++;
         }
@@ -77,12 +102,13 @@ public class GameController : MonoBehaviour
         {
             levels[i].SetActive(false);
         }
-        if(nextLevel < levels.Length)
+        if (nextLevel < levels.Length)
         {
             levels[nextLevel].SetActive(true);
             PlayerPrefs.SetInt(CURRENT_LEVEL_KEY, nextLevel);
-            
-        } else
+
+        }
+        else
         {
             SceneManager.LoadScene(1);
         }
